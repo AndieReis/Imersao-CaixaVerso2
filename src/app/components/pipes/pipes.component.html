@@ -1,0 +1,32 @@
+<div>
+  <h2>{{ tituloComp }}</h2>
+
+  <table class="bordaTabela">
+    <thead>
+      <th>LowerCase</th>
+      <th>Uppercase</th>
+      <th>Currency</th>
+      <th>Data</th>
+      <th>Slice</th>
+      <th>Porcentagem</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ umTextoQualquer | lowercase }}</td>
+        <td>{{ tituloComp | uppercase }}</td>
+        <td>
+          {{ valorFloat | currency : "BRL" }}
+          <br />
+          {{ valorFloat | currency : "USD" : "code": "" : "en-US" }}
+          <!-- "USD": codigo internacional moeda - dolar EUA
+               "code": define como o texto aparece na tela USD
+               "": string vazia - sem símbolo assim o Angular adota o padrão de moeda para as casas decimais
+               "en-US" define a localidade/regionalização de exibição dos dados -->
+        </td>
+        <td>{{ umaData | date : "d/M/y" }}</td>
+        <td>{{ calendario | slice : 2 : 6 }}</td>
+        <td>{{ umOutroValor | percent }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

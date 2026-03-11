@@ -7,14 +7,14 @@ export class Filme{
   titulo: string
   direcao: string
   elenco: string
-  anoLancamento: string
+  anoLancamento: number
 
   //inicializar as props apartir do construtor da classe
   constructor(
     titulo: string,
     direcao: string,
     elenco: string,
-    anoLancamento: string
+    anoLancamento: number
   ){
     //acessar as propriedades da classe e inicializá-las atribuindo os parâmetros do método construtor
     this.titulo = titulo
