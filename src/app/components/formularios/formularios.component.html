@@ -3,12 +3,15 @@
 <div>
   <h2> {{ tituloComp }}</h2>
 
-  <form>
-    <input type="text" name="nome" placeholder="Informe seu nome" />
+  <!-- #capturaDados - variável de contexto (identificação), "apelido" do formulário -->
+  <form #capturaDados = "ngForm" (ngSubmit)="dadosRecebidos(capturaDados.value)">
+    <!-- dadosRecebidos() - função/método que vai receber os dados aqui capturados e manipulá-los.
+     caprturaDados.value - em função da variável de identificação do form (#capturaDados) podemos extrair do formulário um objeto json e enviar para a função -->
+    <input type="text" name="nome" placeholder="Informe seu nome" ngModel />
     <br />
-    <input type="email" name="email" placeholder="Informe seu email" />
+    <input type="email" name="email" placeholder="Informe seu email" ngModel />
     <br />
-    <input type="password" name="password" placeholder="Informe sua senha">
+    <input type="password" name="password" placeholder="Informe sua senha" ngModel>
     <br />
     <input type="submit" value="Enviar">
   </form>
